@@ -16,7 +16,7 @@ void thread_callback()
 
 int main(void)
 {
-	thread corr(thread_callback);    // 使用执行函数初始化线程对象 
+	thread corr(thread_callback);    // 使用执行函数初始化和启动线程对象 
 	cout<<"Hello world from main thread."<<endl;
-	corr.join();    // 调用join方法，执行线程对象
+	corr.join();    // 调用join方法，决定结束线程对象的方式
 }
