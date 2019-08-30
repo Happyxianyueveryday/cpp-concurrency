@@ -5,19 +5,21 @@ using namespace std;
 
 void func()
 {
-	for(int i=0;i<100;i++)
+	for(int i=0;i<10;i++)
 	{
-		cout<<"Concurrent Thread"<<endl;
+		cout<<"Concurrent Thread\n";
 	}
 }
 
 int main(void)
 {
-	thread corr(func);   // 初始化线程并执行
-	corr.detach();       // 设定父子线程关系模式，采用分离式，线程将一直独立执行下去，直到主线程终止
+	thread corr(func);
 	
-	for(int i=0;i<100;i++)
+	corr.detach();   // 设定父子线程终止关系为分离式，从detach()方法被调用之后，父线程和子线程之间分离，均并发执行直到两者分别自行结束，父线程不再能够控制子线程 
+	
+	for(int i=0;i<10;i++)
 	{
-		cout<<"Main Thread."<<endl;
+		cout<<"Main Thread.\n";
+		cout<<"Concurrent-Thread and Main-Thread are all running before Main-Thread finished."<<endl; 
 	}
 } 
