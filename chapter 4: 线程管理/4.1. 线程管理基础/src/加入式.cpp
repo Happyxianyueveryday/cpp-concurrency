@@ -13,8 +13,8 @@ void func()
 
 int main(void)
 {
-	thread corr(func);
-	corr.join();     // 使用加入式启动线程 
+	thread corr(func);    // 创建并启动线程
+	corr.join();          // 设定线程终止模式，调用join()方法将线程终止模式设定为加入式，该线程执行完毕后就立刻销毁，返回主线程继续执行	
 	
 	for(int i=0;i<100;i++)
 	{
