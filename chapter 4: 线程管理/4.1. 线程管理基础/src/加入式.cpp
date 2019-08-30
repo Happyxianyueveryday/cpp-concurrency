@@ -5,19 +5,25 @@ using namespace std;
 
 void func()
 {
-	for(int i=0;i<100;i++)
+	for(int i=0;i<10;i++)
 	{
-		cout<<"Concurrent Thread"<<endl;
+		cout<<"Concurrent Thread\n";
 	}
 }
 
 int main(void)
 {
-	thread corr(func);    // 创建并启动线程
-	corr.join();          // 设定父子线程终止关系，调用join()方法将父子线程终止关系设定为加入式，该线程执行完毕后就立刻销毁，返回主线程继续执行	
+	thread corr(func);
 	
-	for(int i=0;i<100;i++)
+	for(int i=0;i<10;i++)
 	{
-		cout<<"Main Thread."<<endl;
+		cout<<"Main Thread.\n";
+	}
+	
+	corr.join();   // 设定父子线程终止关系为加入式，在join()方法被调用之前，子线程和父线程并发执行，父线程执行到join()时被阻塞，直到子线程执行结束后，父线程才继续执行join()之后的代码 
+	
+	for(int i=0;i<10;i++)
+	{
+		cout<<"Concurrent Thread is finished."<<endl; 
 	}
 } 
