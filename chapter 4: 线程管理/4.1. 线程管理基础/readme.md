@@ -16,10 +16,15 @@
 
 如下的两张自制图简单说明了两种线程结束模式的具体区别，可以很好的帮助理解线程的结束模式。
 
++ 加入式: join方法  
 
+![avatar](https://github.com/Happyxianyueveryday/cpp-concurrency/blob/master/chapter%204:%20%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/4.1.%20%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/pics/QQ%E6%88%AA%E5%9B%BE20190831113033.png)
 
++ 分离式: detach方法  
+
+![avatar](https://github.com/Happyxianyueveryday/cpp-concurrency/blob/master/chapter%204:%20%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86/4.1.%20%E7%BA%BF%E7%A8%8B%E7%AE%A1%E7%90%86%E5%9F%BA%E7%A1%80/pics/QQ%E6%88%AA%E5%9B%BE20190831114821.png)
 
 ### 3. 示例代码
-
+./src下提供了两种线程结束模式的简单示例，运行后可以对照代码分析两种线程结束模式的不同。
 
 
