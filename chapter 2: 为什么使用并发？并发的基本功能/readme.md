@@ -30,10 +30,12 @@
 
 文字描述可能不甚清晰，下面以制造100辆汽车为例，这里以图表方式展示了数据并行和任务并行的基本概念。还可以将数据并行和任务并行结合起来，方法非常简单，因此这里略去了组合方式的图表。
 
-+ 数据并行
++ 数据并行  
+
 ![avatar](https://github.com/Happyxianyueveryday/cpp-concurrency/blob/master/chapter%202:%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%B9%B6%E5%8F%91%EF%BC%9F%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/pics/QQ%E6%88%AA%E5%9B%BE20190831083733.png)
 
-+ 任务并行
++ 任务并行  
+
 ![avatar](https://github.com/Happyxianyueveryday/cpp-concurrency/blob/master/chapter%202:%20%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8%E5%B9%B6%E5%8F%91%EF%BC%9F%E5%B9%B6%E5%8F%91%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/pics/QQ%E6%88%AA%E5%9B%BE20190831083740.png)
 
 
