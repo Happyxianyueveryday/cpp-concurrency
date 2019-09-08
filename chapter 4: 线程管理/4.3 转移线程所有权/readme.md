@@ -11,3 +11,17 @@ std::thread不允许拷贝操作，也即禁用了拷贝构造函数和拷贝赋
 
 因此仅有对joinable()方法返回true的线程，才能够调用join()方法设置结束状态为加入式。
 
+进行了以下操作的线程不再是joinable的，即调用该线程的joinable()方法返回false。
+
++ 该线程已经调用过join()或者detach()方法设置过结束模式。
++ 该线程的所有权已经被转移过。
+
+只有joinable的线程可以作为转移所有权操作表达式的左值。例如：
+```
+thread t1(func);
+thread t2=std::move(t1);    // 所有权转移成功，t2是joinable的
+t1=std::move(t2);           // 所有权转移失败，t1所有权被转交过，不再是joinable的
+```
+
+### 3. 转移所有权操作的实际应用
+
