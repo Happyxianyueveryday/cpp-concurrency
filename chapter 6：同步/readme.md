@@ -16,7 +16,7 @@ condition_variable::wait(unique_lock<T> &lock, function condition);
 
 wait()方法的执行如下所示：
 
-+ wait()方法首先判断和检查条件函数condition的返回值，若返回值为true则不阻塞；若返回值为false，则通过调用互斥锁的lock()方法锁定参数互斥锁lock进行阻塞，并使当前线程进入睡眠状态，直到另一个线程调用了相同条件变量的notify()系列方法，或者检查到条件函数返回值为true时，释放互斥锁解除阻塞，继续执行wait()之后的语句。
++ wait()方法首先判断和检查条件函数condition的返回值，若返回值为true则阻塞互斥量，互斥执行wait之后的代码；若返回值为false，则释放互斥锁，并使当前线程进入睡眠状态以让其他线程执行，直到另一个线程调用了相同条件变量的notify()系列方法，或者检查到条件函数返回值为true时，释放互斥锁解除阻塞，继续执行wait()之后的语句。
 
 ### 3. notify()方法
 notify()方法用于沉睡线程的唤醒，具体有两个方法：
